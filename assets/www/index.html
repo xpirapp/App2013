@@ -88,7 +88,7 @@ function downloadFile(filePath)
 			  
 			  alert("Image Path: "+imagePath);
 			  var fileTransfer = new FileTransfer();
-			  fileTransfer.download(url, imagePath, function (entry) {
+			  fileTransfer.download("http://www.eventoacr.com.br/pdf/poster.pdf", imagePath, function (entry) {
 					   alert(entry.fullPath); // entry is fileEntry object
 					   window.open(entry.fullPath, '_blank', 'EnableViewPortScale=yes','location=yes');
 			  }, function (error) {
