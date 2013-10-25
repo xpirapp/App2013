@@ -75,7 +75,7 @@
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 			  var imagePath = fs.root.fullPath + "/"+url; // full file path
 			  
-			 // alert("Image Path: "+imagePath);
+			 alert("Image Path: "+imagePath);
 			  window.open(imagePath, '_system', 'EnableViewPortScale=yes','location=yes');//
 			
 			 })
@@ -96,7 +96,7 @@ function downloadFile(filePath)
 			  var fileTransfer = new FileTransfer();
 			  fileTransfer.download("http://www.eventoacr.com.br/"+filePath, imagePath, function (entry) {
 					  // alert(entry.fullPath); // entry is fileEntry object
-					   window.open(entry.fullPath, '_system', 'EnableViewPortScale=yes','location=yes');
+					   //window.open(entry.fullPath, '_system', 'EnableViewPortScale=yes','location=yes');
 			  }, function (error) {
 					   //alert("");
 			  });
