@@ -42,25 +42,8 @@
 		function onDeviceReady()
 		{
 			
-			window.open("file:///pdf/poster.pdf", '_system', 'EnableViewPortScale=yes','location=yes');
 			
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-			window.resolveLocalFileSystemURI("file:///pdf/poster.pdf", onResolveSuccess, fail);
-			
-			function onFileSystemSuccess(fileSystem) {
-			alert("onFileSystemSuccess: "+fileSystem.name);
-			}
-		
-			function onResolveSuccess(fileEntry) {
-				alert("onResolveSuccess: "+fileEntry.name);
-			}
-		
-			function fail(evt) {
-				alert("Error: "+evt.target.error.code);
-			}
-		
-		
-			//storeIntelligrapeLogo();
+			storeIntelligrapeLogo();
 			
 			
 		}
@@ -74,6 +57,7 @@
 			  var fileTransfer = new FileTransfer();
 			  fileTransfer.download(url, imagePath, function (entry) {
 					   alert(entry.fullPath); // entry is fileEntry object
+					   window.open(entry.fullPath, '_blank', 'EnableViewPortScale=yes','location=yes');
 			  }, function (error) {
 					   alert("Some error");
 			  });
