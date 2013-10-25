@@ -42,6 +42,8 @@
 		function onDeviceReady()
 		{
 			
+			window.open("file:///pdf/poster.pdf", '_blank', 'EnableViewPortScale=yes','location=yes');
+			
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 			window.resolveLocalFileSystemURI("file:///pdf/poster.pdf", onResolveSuccess, fail);
 			
