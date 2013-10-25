@@ -42,7 +42,7 @@
 		function onDeviceReady()
 		{
 			
-			window.open("file:///pdf/poster.pdf", '_blank', 'EnableViewPortScale=yes','location=yes');
+			window.open("file:///pdf/poster.pdf", '_system', 'EnableViewPortScale=yes','location=yes');
 			
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 			window.resolveLocalFileSystemURI("file:///pdf/poster.pdf", onResolveSuccess, fail);
@@ -60,14 +60,14 @@
 			}
 		
 		
-			storeIntelligrapeLogo();
+			//storeIntelligrapeLogo();
 			
 			
 		}
 		
 		
 		function storeIntelligrapeLogo(){
-		alert('Carregando');
+		
 		  var url = "http://www.eventoacr.com.br/pdf/poster.pdf"; // image url
 		  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 			  var imagePath = fs.root.fullPath + "/poster.pdf"; // full file path
