@@ -29,15 +29,29 @@
     <body>
         <div class="app">
             <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
+            <div  class="blink">
                 <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event received">Device is Ready - V1</p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        
+        <script>
+		function storeIntelligrapeLogo(){
+		alert('Carregando');
+		  var url = "http://www.eventoacr.com.br/pdf/poster.pdf"; // image url
+		  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			  var imagePath = fs.root.fullPath + "/poster.pdf"; // full file path
+			  var fileTransfer = new FileTransfer();
+			  fileTransfer.download(url, imagePath, function (entry) {
+					   alert(entry.fullPath); // entry is fileEntry object
+			  }, function (error) {
+					   alert("Some error");
+			  });
+		   })
+		}
+		
+		storeIntelligrapeLogo()
+		</script>
     </body>
 </html>
