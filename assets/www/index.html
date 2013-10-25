@@ -40,7 +40,7 @@
 	
   function onDeviceReady() {
 	  
-	
+		downloadFile('pdf/poster.pdf');
 		if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)) {
 			//$("body").addClass("ios7");
 			//$('body').append('<div id="ios7statusbar"/>');
@@ -75,7 +75,7 @@
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 			  var imagePath = fs.root.fullPath + "/"+url; // full file path
 			  
-			 alert("Image Path: "+imagePath);
+			  alert("Image Path: "+imagePath);
 			  window.open(imagePath, '_system', 'EnableViewPortScale=yes','location=yes');//
 			
 			 })

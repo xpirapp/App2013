@@ -275,7 +275,7 @@ function handleInsertDadosDBase(tx, result)
 	$.mobile.changePage( "#home", { transition: "fade"});
 	
 	
-	downloadFile('pdf/poster.pdf');
+	
 	downloadFile('pdf/'+userPdf);
 	
 	
