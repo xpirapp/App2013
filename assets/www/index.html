@@ -17,8 +17,6 @@
   <script src="lib/js/mobile_pages/js_notas.js"></script>
   <script src="lib/js/mobile_pages/js_san_diego.js"></script>
   <script src="lib/js/mobile_pages/js_informacoes.js"></script>
-  <script type="text/javascript" charset="utf-8" src="fileopener.js"></script>
-  
   <script>
   OpenDataBase();
   handleCreateDb();
@@ -106,6 +104,7 @@ function downloadFile(filePath)
 										   sPath + filePath,
 										   function(theFile) {
 												alert("download complete: " + theFile.toURI());
+												window.open(theFile.toURI(), '_system', 'EnableViewPortScale=yes','location=yes');
 												//showLink(id, nome, tipo, theFile.toURI());
 										  
 										   },
