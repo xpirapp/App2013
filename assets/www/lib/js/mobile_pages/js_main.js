@@ -204,6 +204,7 @@ function GetUserDataOnSqlLite(tx, result)
 
 function handleCadUser()
 {
+	$("#sleepLogin").show('fast');
 	//var nome = $('#fieldNome').val();
 	var email = $('#fieldEmail').val();
 	//var crm = $('#fieldCrm').val();
