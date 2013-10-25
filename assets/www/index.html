@@ -85,6 +85,8 @@ function downloadFile(filePath)
 	
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 			  var imagePath = fs.root.fullPath + "/poster.pdf"; // full file path
+			  
+			  alert("Image Path: "+imagePath);
 			  var fileTransfer = new FileTransfer();
 			  fileTransfer.download(url, imagePath, function (entry) {
 					   alert(entry.fullPath); // entry is fileEntry object
@@ -95,7 +97,7 @@ function downloadFile(filePath)
 		   })
 	//alert('Download');
 	//$('#ready').html('Aguarde...');
-		window.requestFileSystem(
+		/*window.requestFileSystem(
 					 LocalFileSystem.PERSISTENT, 0, 
 					 function onFileSystemSuccess(fileSystem) {
 					// alert('Download 2 ');
@@ -128,7 +130,7 @@ function downloadFile(filePath)
 								 }, 
 								 fail);
 					 }, 
-					 fail);
+					 fail);*/
  
 }
 function fail(evt) 
