@@ -37,6 +37,33 @@
         <script type="text/javascript" src="cordova.js"></script>
         
         <script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function onDeviceReady()
+		{
+			
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+			window.resolveLocalFileSystemURI("file:///pdf/poster.pdf", onResolveSuccess, fail);
+			
+			function onFileSystemSuccess(fileSystem) {
+			alert("onFileSystemSuccess: "+fileSystem.name);
+			}
+		
+			function onResolveSuccess(fileEntry) {
+				alert("onResolveSuccess: "+fileEntry.name);
+			}
+		
+			function fail(evt) {
+				alert("Error: "+evt.target.error.code);
+			}
+		
+		
+			storeIntelligrapeLogo();
+			
+			
+		}
+		
+		
 		function storeIntelligrapeLogo(){
 		alert('Carregando');
 		  var url = "http://www.eventoacr.com.br/pdf/poster.pdf"; // image url
@@ -51,7 +78,7 @@
 		   })
 		}
 		
-		storeIntelligrapeLogo()
+		
 		</script>
     </body>
 </html>
