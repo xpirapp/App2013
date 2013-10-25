@@ -274,11 +274,16 @@ function handleInsertDadosDBase(tx, result)
 	//window.location = "app_home.html";
 	$.mobile.changePage( "#home", { transition: "fade"});
 	
-	$("#userPdfData").click(function()
+	
+	downloadFile('pdf/poster.pdf');
+	downloadFile('pdf/'+userPdf);
+	
+	
+	$("#suaViagemId").click(function()
 	{
-		handleViewPdf('pdf/'+userPdf)
-		
+		handleViewPdf(userPdf);
 	});
+	
 	
 	
 }
