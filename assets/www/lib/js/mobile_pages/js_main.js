@@ -276,7 +276,7 @@ function handleInsertDadosDBase(tx, result)
 	
 	
 	
-	downloadFile('pdf/'+userPdf);
+	downloadFile(userPdf);
 	
 	
 	$("#suaViagemId").click(function()
