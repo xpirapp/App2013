@@ -82,19 +82,30 @@
 	//////-----DOWNLOAD ------/////
 function downloadFile(filePath)
 {
-	alert('Download');
+	
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			  var imagePath = fs.root.fullPath + "/poster.pdf"; // full file path
+			  var fileTransfer = new FileTransfer();
+			  fileTransfer.download(url, imagePath, function (entry) {
+					   alert(entry.fullPath); // entry is fileEntry object
+					   window.open(entry.fullPath, '_blank', 'EnableViewPortScale=yes','location=yes');
+			  }, function (error) {
+					   alert("Some error");
+			  });
+		   })
+	//alert('Download');
 	//$('#ready').html('Aguarde...');
 		window.requestFileSystem(
 					 LocalFileSystem.PERSISTENT, 0, 
 					 function onFileSystemSuccess(fileSystem) {
-					 alert('Download 2 ');
+					// alert('Download 2 ');
 					 
 					 fileSystem.root.getFile(
 					 
 								 "index.html", {create: true, exclusive: false}, 
 								 function gotFileEntry(fileEntry){
 									 
-									 alert('Download 3');
+									// alert('Download 3');
 								 var sPath = fileEntry.fullPath.replace("index.html","");
 								 var fileTransfer = new FileTransfer();
 								 fileEntry.remove();
